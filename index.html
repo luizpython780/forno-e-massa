@@ -1,0 +1,355 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Forno & Massa — pizza artesanal, ingredientes selecionados e experiências especiais.">
+
+    <title>Forno & Massa | Pizza Artesanal</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- CABEÇALHO -->
+
+    <header class="header">
+        <a href="#inicio" class="logo">
+            FORNO<span>&</span>MASSA
+        </a>
+
+        <nav class="nav" id="nav">
+            <a href="#inicio">Início</a>
+            <a href="#historia">Nossa história</a>
+            <a href="#cardapio">Cardápio</a>
+            <a href="#contato">Contato</a>
+        </nav>
+
+        <a href="#cardapio" class="header-button">
+            Fazer pedido <span>↗</span>
+        </a>
+
+        <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+            ☰
+        </button>
+    </header>
+
+
+    <main>
+
+        <!-- APRESENTAÇÃO -->
+
+        <section class="hero" id="inicio">
+
+            <div class="hero-background"></div>
+
+            <div class="hero-content">
+
+                <div class="hero-tag">
+                    <span></span>
+                    PIZZA ARTESANAL • DESDE 2020
+                </div>
+
+                <h1>
+                    A arte de fazer<br>
+                    uma boa <em>pizza.</em>
+                </h1>
+
+                <p>
+                    Massa artesanal, ingredientes selecionados
+                    e sabores preparados para transformar
+                    momentos simples em experiências especiais.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#cardapio" class="button button-primary">
+                        Explorar cardápio <span>↗</span>
+                    </a>
+
+                    <a href="#historia" class="button button-outline">
+                        Nossa história
+                    </a>
+                </div>
+
+                <div class="hero-footer">
+                    <span>INGREDIENTES SELECIONADOS</span>
+                    <span>FEITAS COM PAIXÃO</span>
+                </div>
+
+            </div>
+
+            <div class="hero-photo">
+                <img
+                    src="https://images.unsplash.com/photo-1579751626657-72bc17010498?auto=format&fit=crop&w=1400&q=90"
+                    alt="Pizza artesanal preparada no forno">
+
+                <div class="photo-caption">
+                    <span>01 / NOSSA ESPECIALIDADE</span>
+                    <strong>O verdadeiro sabor artesanal.</strong>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- DIFERENCIAIS -->
+
+        <section class="features">
+
+            <div class="feature">
+                <span>01</span>
+                <div>
+                    <h3>Massa artesanal</h3>
+                    <p>Preparada com cuidado e tempo.</p>
+                </div>
+            </div>
+
+            <div class="feature">
+                <span>02</span>
+                <div>
+                    <h3>Ingredientes frescos</h3>
+                    <p>Qualidade em cada detalhe.</p>
+                </div>
+            </div>
+
+            <div class="feature">
+                <span>03</span>
+                <div>
+                    <h3>Feita na hora</h3>
+                    <p>Sabor especial em cada pedido.</p>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- HISTÓRIA -->
+
+        <section class="story section" id="historia">
+
+            <div class="story-image">
+                <img
+                    src="https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?auto=format&fit=crop&w=1200&q=90"
+                    alt="Pizza artesanal com ingredientes frescos">
+            </div>
+
+            <div class="story-content">
+
+                <span class="section-label">NOSSA ESSÊNCIA</span>
+
+                <h2>
+                    O segredo está<br>
+                    nos <em>detalhes.</em>
+                </h2>
+
+                <p>
+                    Acreditamos que uma boa pizza começa muito
+                    antes de chegar à mesa.
+
+                    Cada ingrediente, cada preparo e cada detalhe
+                    fazem parte de uma experiência que merece
+                    ser apreciada.
+                </p>
+
+                <a href="#cardapio" class="text-link">
+                    Conheça nossos sabores <span>→</span>
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- CARDÁPIO -->
+
+        <section class="menu section" id="cardapio">
+
+            <div class="menu-heading">
+
+                <div>
+                    <span class="section-label">FEITAS PARA APRECIAR</span>
+
+                    <h2>
+                        Nossas <em>pizzas.</em>
+                    </h2>
+                </div>
+
+                <p>
+                    Sabores selecionados para quem
+                    valoriza uma boa experiência.
+                </p>
+
+            </div>
+
+
+            <div class="pizza-grid">
+
+                <article class="pizza-card">
+
+                    <div class="pizza-image">
+                        <img
+                            src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=900&q=90"
+                            alt="Pizza Margherita">
+
+                        <span class="pizza-number">01</span>
+                    </div>
+
+                    <div class="pizza-info">
+
+                        <div class="pizza-title">
+                            <h3>Margherita</h3>
+                            <span>R$ 42,00</span>
+                        </div>
+
+                        <p>
+                            Molho de tomate, muçarela,
+                            manjericão e azeite.
+                        </p>
+
+                        <button class="add-button"
+                            data-name="Margherita"
+                            data-price="42">
+                            Adicionar ao pedido <span>+</span>
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article class="pizza-card">
+
+                    <div class="pizza-image">
+                        <img
+                            src="https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?auto=format&fit=crop&w=900&q=90"
+                            alt="Pizza Pepperoni">
+
+                        <span class="pizza-number">02</span>
+                    </div>
+
+                    <div class="pizza-info">
+
+                        <div class="pizza-title">
+                            <h3>Pepperoni</h3>
+                            <span>R$ 49,00</span>
+                        </div>
+
+                        <p>
+                            Muçarela, pepperoni e
+                            molho artesanal da casa.
+                        </p>
+
+                        <button class="add-button"
+                            data-name="Pepperoni"
+                            data-price="49">
+                            Adicionar ao pedido <span>+</span>
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article class="pizza-card">
+
+                    <div class="pizza-image">
+                        <img
+                            src="https://images.unsplash.com/photo-1579751626657-72bc17010498?auto=format&fit=crop&w=900&q=90"
+                            alt="Pizza Especial da Casa">
+
+                        <span class="pizza-number">03</span>
+                    </div>
+
+                    <div class="pizza-info">
+
+                        <div class="pizza-title">
+                            <h3>Especial da Casa</h3>
+                            <span>R$ 54,00</span>
+                        </div>
+
+                        <p>
+                            Uma combinação especial de
+                            ingredientes selecionados.
+                        </p>
+
+                        <button class="add-button"
+                            data-name="Especial da Casa"
+                            data-price="54">
+                            Adicionar ao pedido <span>+</span>
+                        </button>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+           <div class="order-summary" id="order-summary" hidden>
+    <h3>Seu pedido</h3>
+
+    <span id="order-count">0 itens</span>
+
+    <div class="order-items" id="order-items"></div>
+
+    <strong id="order-total">Total: R$ 0,00</strong>
+
+    <button id="finish-order">Finalizar pedido ↗</button>
+</div>
+
+        </section>
+
+
+        <!-- CONTATO -->
+
+        <section class="contact section" id="contato">
+
+            <span class="section-label">UMA EXPERIÊNCIA ESPECIAL</span>
+
+            <h2>
+                Uma boa pizza<br>
+                sempre é uma <em>boa ideia.</em>
+            </h2>
+
+            <p>
+                Escolha seu sabor favorito e aproveite.
+            </p>
+
+            <a href="#cardapio" class="button button-primary">
+                Escolher minha pizza ↗
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- RODAPÉ -->
+
+    <footer class="footer">
+
+        <a href="#inicio" class="logo">
+            FORNO<span>&</span>MASSA
+        </a>
+
+        <p>
+            © 2026 Forno & Massa.
+            Projeto demonstrativo.
+        </p>
+
+        <a href="#inicio">Voltar ao topo ↑</a>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
