@@ -1,100 +1,171 @@
 
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="Forno & Massa — pizza artesanal, ingredientes selecionados e experiências especiais.">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
-    <title>Forno & Massa | Pizza Artesanal</title>
+    <meta name="description"
+        content="Conheça o Forno & Massa, uma experiência demonstrativa de delivery de pizzas artesanais. Explore o cardápio e monte seu pedido.">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta name="theme-color" content="#f5f2eb">
 
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <title>Forno &amp; Massa | Pizzaria Artesanal e Delivery</title>
+
+    <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet">
 
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-    <!-- CABEÇALHO -->
+    <!-- =====================================
+         CABEÇALHO
+    ====================================== -->
 
     <header class="header">
-        <a href="#inicio" class="logo">
-            FORNO<span>&</span>MASSA
+
+        <a href="#inicio"
+            class="logo"
+            aria-label="Forno e Massa - Início">
+
+            FORNO<span>&amp;</span>MASSA
+
         </a>
 
-        <nav class="nav" id="nav">
+        <nav class="nav"
+            id="nav"
+            aria-label="Navegação principal">
+
             <a href="#inicio">Início</a>
-            <a href="#historia">Nossa história</a>
             <a href="#cardapio">Cardápio</a>
-            <a href="#contato">Contato</a>
+            <a href="#historia">Nossa história</a>
+            <a href="#pedido">Meu pedido</a>
+
         </nav>
 
         <a href="#cardapio" class="header-button">
-            Fazer pedido <span>↗</span>
+            Fazer pedido
+            <span aria-hidden="true">↗</span>
         </a>
 
-        <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+        <button
+            type="button"
+            class="menu-toggle"
+            id="menu-toggle"
+            aria-label="Abrir menu"
+            aria-expanded="false"
+            aria-controls="nav">
+
             ☰
+
         </button>
+
     </header>
 
 
-    <main>
+    <!-- =====================================
+         CONTEÚDO PRINCIPAL
+    ====================================== -->
 
-        <!-- APRESENTAÇÃO -->
+    <main id="main-content">
 
-        <section class="hero" id="inicio">
+        <noscript>
+            <p>
+                Ative o JavaScript do navegador para
+                utilizar o carrinho de pedidos.
+            </p>
+        </noscript>
 
-            <div class="hero-background"></div>
+
+        <!-- APRESENTAÇÃO PRINCIPAL -->
+
+        <section
+            class="hero"
+            id="inicio"
+            aria-labelledby="hero-title">
+
+            <div class="hero-background"
+                aria-hidden="true">
+            </div>
 
             <div class="hero-content">
 
                 <div class="hero-tag">
-                    <span></span>
-                    PIZZA ARTESANAL • DESDE 2020
+                    <span aria-hidden="true"></span>
+                    PIZZA ARTESANAL • DELIVERY
                 </div>
 
-                <h1>
-                    A arte de fazer<br>
-                    uma boa <em>pizza.</em>
+                <h1 id="hero-title">
+                    O verdadeiro sabor de uma
+                    <em>pizza artesanal.</em>
                 </h1>
 
                 <p>
-                    Massa artesanal, ingredientes selecionados
-                    e sabores preparados para transformar
-                    momentos simples em experiências especiais.
+                    Massa preparada com cuidado,
+                    ingredientes selecionados e sabores
+                    especiais. Escolha sua pizza favorita
+                    e monte seu pedido.
                 </p>
 
                 <div class="hero-buttons">
-                    <a href="#cardapio" class="button button-primary">
-                        Explorar cardápio <span>↗</span>
+
+                    <a href="#cardapio"
+                        class="button button-primary">
+
+                        Ver cardápio
+                        <span aria-hidden="true">↗</span>
+
                     </a>
 
-                    <a href="#historia" class="button button-outline">
-                        Nossa história
+                    <a href="#historia"
+                        class="button button-outline">
+
+                        Conheça nossa história
+
                     </a>
+
                 </div>
 
                 <div class="hero-footer">
+
                     <span>INGREDIENTES SELECIONADOS</span>
-                    <span>FEITAS COM PAIXÃO</span>
+                    <span>PREPARO ARTESANAL</span>
+                    <span>DELIVERY DEMONSTRATIVO</span>
+
                 </div>
 
             </div>
 
             <div class="hero-photo">
+
                 <img
                     src="https://images.unsplash.com/photo-1579751626657-72bc17010498?auto=format&fit=crop&w=1400&q=90"
-                    alt="Pizza artesanal preparada no forno">
+                    alt="Pizza artesanal"
+                    fetchpriority="high">
 
                 <div class="photo-caption">
-                    <span>01 / NOSSA ESPECIALIDADE</span>
-                    <strong>O verdadeiro sabor artesanal.</strong>
+
+                    <span>FORNO &amp; MASSA</span>
+
+                    <strong>
+                        Feita para momentos especiais.
+                    </strong>
+
                 </div>
+
             </div>
 
         </section>
@@ -102,111 +173,125 @@
 
         <!-- DIFERENCIAIS -->
 
-        <section class="features">
+        <section
+            class="features"
+            aria-label="Nossos diferenciais">
 
             <div class="feature">
-                <span>01</span>
+
+                <span aria-hidden="true">01</span>
+
                 <div>
+
                     <h3>Massa artesanal</h3>
-                    <p>Preparada com cuidado e tempo.</p>
+
+                    <p>
+                        Preparada com cuidado e dedicação.
+                    </p>
+
                 </div>
+
             </div>
 
             <div class="feature">
-                <span>02</span>
+
+                <span aria-hidden="true">02</span>
+
                 <div>
-                    <h3>Ingredientes frescos</h3>
-                    <p>Qualidade em cada detalhe.</p>
+
+                    <h3>Ingredientes selecionados</h3>
+
+                    <p>
+                        Qualidade em cada detalhe.
+                    </p>
+
                 </div>
+
             </div>
 
             <div class="feature">
-                <span>03</span>
+
+                <span aria-hidden="true">03</span>
+
                 <div>
-                    <h3>Feita na hora</h3>
-                    <p>Sabor especial em cada pedido.</p>
+
+                    <h3>Pedido simplificado</h3>
+
+                    <p>
+                        Escolha seus sabores favoritos.
+                    </p>
+
                 </div>
-            </div>
-
-        </section>
-
-
-        <!-- HISTÓRIA -->
-
-        <section class="story section" id="historia">
-
-            <div class="story-image">
-                <img
-                    src="https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?auto=format&fit=crop&w=1200&q=90"
-                    alt="Pizza artesanal com ingredientes frescos">
-            </div>
-
-            <div class="story-content">
-
-                <span class="section-label">NOSSA ESSÊNCIA</span>
-
-                <h2>
-                    O segredo está<br>
-                    nos <em>detalhes.</em>
-                </h2>
-
-                <p>
-                    Acreditamos que uma boa pizza começa muito
-                    antes de chegar à mesa.
-
-                    Cada ingrediente, cada preparo e cada detalhe
-                    fazem parte de uma experiência que merece
-                    ser apreciada.
-                </p>
-
-                <a href="#cardapio" class="text-link">
-                    Conheça nossos sabores <span>→</span>
-                </a>
 
             </div>
 
         </section>
 
 
-        <!-- CARDÁPIO -->
+        <!-- =====================================
+             CARDÁPIO
+        ====================================== -->
 
-        <section class="menu section" id="cardapio">
+        <section
+            class="menu section"
+            id="cardapio"
+            aria-labelledby="menu-title">
 
             <div class="menu-heading">
 
                 <div>
-                    <span class="section-label">FEITAS PARA APRECIAR</span>
 
-                    <h2>
-                        Nossas <em>pizzas.</em>
+                    <span class="section-label">
+                        ESCOLHA SEU SABOR
+                    </span>
+
+                    <h2 id="menu-title">
+                        Nosso <em>cardápio.</em>
                     </h2>
+
                 </div>
 
                 <p>
-                    Sabores selecionados para quem
-                    valoriza uma boa experiência.
+                    Conheça nossas pizzas artesanais
+                    e escolha a combinação perfeita
+                    para o seu momento.
                 </p>
 
             </div>
 
 
-            <div class="pizza-grid">
+            <!-- LISTA DE PRODUTOS -->
 
-                <article class="pizza-card">
+            <div class="pizza-grid" id="product-grid">
+
+
+                <!-- MARGHERITA -->
+
+                <article
+                    class="pizza-card"
+                    data-category="tradicionais"
+                    data-product-id="margherita">
 
                     <div class="pizza-image">
+
                         <img
                             src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=900&q=90"
-                            alt="Pizza Margherita">
+                            alt="Pizza Margherita"
+                            loading="lazy"
+                            decoding="async">
 
                         <span class="pizza-number">01</span>
+
                     </div>
 
                     <div class="pizza-info">
 
                         <div class="pizza-title">
+
                             <h3>Margherita</h3>
+
                             <span>R$ 42,00</span>
+
                         </div>
 
                         <p>
@@ -214,10 +299,16 @@
                             manjericão e azeite.
                         </p>
 
-                        <button class="add-button"
+                        <button
+                            type="button"
+                            class="add-button"
                             data-name="Margherita"
-                            data-price="42">
-                            Adicionar ao pedido <span>+</span>
+                            data-price="42"
+                            aria-label="Adicionar Margherita ao pedido">
+
+                            Adicionar ao pedido
+                            <span aria-hidden="true">+</span>
+
                         </button>
 
                     </div>
@@ -225,21 +316,33 @@
                 </article>
 
 
-                <article class="pizza-card">
+                <!-- PEPPERONI -->
+
+                <article
+                    class="pizza-card"
+                    data-category="tradicionais"
+                    data-product-id="pepperoni">
 
                     <div class="pizza-image">
+
                         <img
                             src="https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?auto=format&fit=crop&w=900&q=90"
-                            alt="Pizza Pepperoni">
+                            alt="Pizza Pepperoni"
+                            loading="lazy"
+                            decoding="async">
 
                         <span class="pizza-number">02</span>
+
                     </div>
 
                     <div class="pizza-info">
 
                         <div class="pizza-title">
+
                             <h3>Pepperoni</h3>
+
                             <span>R$ 49,00</span>
+
                         </div>
 
                         <p>
@@ -247,10 +350,16 @@
                             molho artesanal da casa.
                         </p>
 
-                        <button class="add-button"
+                        <button
+                            type="button"
+                            class="add-button"
                             data-name="Pepperoni"
-                            data-price="49">
-                            Adicionar ao pedido <span>+</span>
+                            data-price="49"
+                            aria-label="Adicionar Pepperoni ao pedido">
+
+                            Adicionar ao pedido
+                            <span aria-hidden="true">+</span>
+
                         </button>
 
                     </div>
@@ -258,21 +367,33 @@
                 </article>
 
 
-                <article class="pizza-card">
+                <!-- ESPECIAL DA CASA -->
+
+                <article
+                    class="pizza-card"
+                    data-category="especiais"
+                    data-product-id="especial-da-casa">
 
                     <div class="pizza-image">
+
                         <img
                             src="https://images.unsplash.com/photo-1579751626657-72bc17010498?auto=format&fit=crop&w=900&q=90"
-                            alt="Pizza Especial da Casa">
+                            alt="Pizza Especial da Casa"
+                            loading="lazy"
+                            decoding="async">
 
                         <span class="pizza-number">03</span>
+
                     </div>
 
                     <div class="pizza-info">
 
                         <div class="pizza-title">
+
                             <h3>Especial da Casa</h3>
+
                             <span>R$ 54,00</span>
+
                         </div>
 
                         <p>
@@ -280,10 +401,16 @@
                             ingredientes selecionados.
                         </p>
 
-                        <button class="add-button"
+                        <button
+                            type="button"
+                            class="add-button"
                             data-name="Especial da Casa"
-                            data-price="54">
-                            Adicionar ao pedido <span>+</span>
+                            data-price="54"
+                            aria-label="Adicionar Especial da Casa ao pedido">
+
+                            Adicionar ao pedido
+                            <span aria-hidden="true">+</span>
+
                         </button>
 
                     </div>
@@ -292,38 +419,201 @@
 
             </div>
 
-           <div class="order-summary" id="order-summary" hidden>
-    <h3>Seu pedido</h3>
 
-    <span id="order-count">0 itens</span>
+            <!-- =====================================
+                 CARRINHO DE PEDIDOS
+            ====================================== -->
 
-    <div class="order-items" id="order-items"></div>
+            <p class="order-intro" id="pedido">
+                Monte seu pedido utilizando o cardápio acima.
+            </p>
 
-    <strong id="order-total">Total: R$ 0,00</strong>
+            <div
+                class="order-summary"
+                id="order-summary"
+                aria-labelledby="order-title"
+                hidden>
 
-    <button id="finish-order">Finalizar pedido ↗</button>
-</div>
+                <h3 id="order-title">Seu pedido</h3>
+
+                <span
+                    id="order-count"
+                    role="status"
+                    aria-live="polite">
+
+                    0 itens
+
+                </span>
+
+                <div
+                    class="order-items"
+                    id="order-items">
+                </div>
+
+                <strong id="order-total">
+                    Total: R$ 0,00
+                </strong>
+
+                <button
+                    type="button"
+                    id="finish-order"
+                    aria-describedby="checkout-notice"
+                    disabled>
+
+                    Finalizar pedido ↗
+
+                </button>
+
+                <p
+                    class="checkout-notice"
+                    id="checkout-notice">
+
+                    Ambiente demonstrativo.
+                    Finalização de pedidos em desenvolvimento.
+
+                </p>
+
+            </div>
 
         </section>
 
 
-        <!-- CONTATO -->
+        <!-- =====================================
+             NOSSA HISTÓRIA
+        ====================================== -->
 
-        <section class="contact section" id="contato">
+        <section
+            class="story section"
+            id="historia"
+            aria-labelledby="story-title">
 
-            <span class="section-label">UMA EXPERIÊNCIA ESPECIAL</span>
+            <div class="story-image">
 
-            <h2>
-                Uma boa pizza<br>
-                sempre é uma <em>boa ideia.</em>
+                <img
+                    src="https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?auto=format&fit=crop&w=1200&q=90"
+                    alt="Pizza artesanal com ingredientes selecionados"
+                    loading="lazy"
+                    decoding="async">
+
+            </div>
+
+            <div class="story-content">
+
+                <span class="section-label">
+                    NOSSA ESSÊNCIA
+                </span>
+
+                <h2 id="story-title">
+                    O segredo está nos <em>detalhes.</em>
+                </h2>
+
+                <p>
+                    Acreditamos que uma boa pizza começa
+                    muito antes de chegar à mesa.
+                </p>
+
+                <p>
+                    Cada ingrediente, cada preparo e cada
+                    detalhe fazem parte de uma experiência
+                    que merece ser apreciada.
+                </p>
+
+                <a href="#cardapio" class="text-link">
+
+                    Conheça nossos sabores
+                    <span aria-hidden="true">→</span>
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             COMO FUNCIONA
+        ====================================== -->
+
+        <section
+            class="contact section how-it-works"
+            id="contato"
+            aria-labelledby="how-title">
+
+            <span class="section-label">
+                SIMPLES E PRÁTICO
+            </span>
+
+            <h2 id="how-title">
+                Seu pedido em <em>três etapas.</em>
             </h2>
 
-            <p>
-                Escolha seu sabor favorito e aproveite.
-            </p>
+            <ol class="steps-grid">
 
-            <a href="#cardapio" class="button button-primary">
-                Escolher minha pizza ↗
+                <li class="step-card">
+
+                    <span
+                        class="step-number"
+                        aria-hidden="true">
+
+                        01
+
+                    </span>
+
+                    <h3>Escolha sua pizza</h3>
+
+                    <p>
+                        Explore o cardápio e encontre
+                        seu sabor favorito.
+                    </p>
+
+                </li>
+
+                <li class="step-card">
+
+                    <span
+                        class="step-number"
+                        aria-hidden="true">
+
+                        02
+
+                    </span>
+
+                    <h3>Monte seu pedido</h3>
+
+                    <p>
+                        Adicione os produtos ao carrinho
+                        e confira as quantidades.
+                    </p>
+
+                </li>
+
+                <li class="step-card">
+
+                    <span
+                        class="step-number"
+                        aria-hidden="true">
+
+                        03
+
+                    </span>
+
+                    <h3>Simule a finalização</h3>
+
+                    <p>
+                        Etapa demonstrativa que será
+                        disponibilizada futuramente.
+                    </p>
+
+                </li>
+
+            </ol>
+
+            <a href="#cardapio"
+                class="button button-primary">
+
+                Explorar cardápio
+                <span aria-hidden="true">↗</span>
+
             </a>
 
         </section>
@@ -331,25 +621,49 @@
     </main>
 
 
-    <!-- RODAPÉ -->
+    <!-- =====================================
+         RODAPÉ
+    ====================================== -->
 
     <footer class="footer">
 
-        <a href="#inicio" class="logo">
-            FORNO<span>&</span>MASSA
+        <a
+            href="#inicio"
+            class="logo"
+            aria-label="Forno e Massa - Início">
+
+            FORNO<span>&amp;</span>MASSA
+
         </a>
 
-        <p>
-            © 2026 Forno & Massa.
-            Projeto demonstrativo.
-        </p>
+        <div class="footer-information">
 
-        <a href="#inicio">Voltar ao topo ↑</a>
+            <p>
+                © 2026 Forno &amp; Massa.
+            </p>
+
+            <p>
+                Projeto demonstrativo desenvolvido pela DevWeb.
+            </p>
+
+            <p>
+                Não realiza vendas, pagamentos ou pedidos reais.
+            </p>
+
+        </div>
+
+        <a href="#inicio">
+            Voltar ao topo
+            <span aria-hidden="true">↑</span>
+        </a>
 
     </footer>
 
 
+    <!-- JAVASCRIPT -->
+
     <script src="js/script.js"></script>
 
 </body>
+
 </html>
