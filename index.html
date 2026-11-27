@@ -50,16 +50,75 @@
             aria-label="Navegação principal">
 
             <a href="#inicio">Início</a>
+
             <a href="#cardapio">Cardápio</a>
+
             <a href="#historia">Nossa história</a>
-            <a href="#pedido">Meu pedido</a>
+
+            <a href="#pedido" data-cart-open>
+                Meu pedido
+            </a>
 
         </nav>
 
         <a href="#cardapio" class="header-button">
+
             Fazer pedido
             <span aria-hidden="true">↗</span>
+
         </a>
+
+
+        <!-- BOTÃO DO CARRINHO -->
+
+        <button
+            type="button"
+            class="cart-toggle"
+            id="cart-toggle"
+            aria-label="Abrir carrinho, 0 itens"
+            aria-haspopup="dialog"
+            aria-controls="cart-dialog"
+            hidden>
+
+            <svg
+                class="cart-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+                focusable="false">
+
+                <path d="M3 3h2l2.4 12h12.2l2.4-8H6"/>
+
+                <circle cx="9" cy="20" r="1"/>
+
+                <circle cx="19" cy="20" r="1"/>
+
+            </svg>
+
+            <span class="cart-toggle-label">
+                Carrinho
+            </span>
+
+            <span
+                class="cart-badge"
+                id="cart-badge"
+                aria-hidden="true">
+
+                0
+
+            </span>
+
+        </button>
+
+
+        <!-- MENU MOBILE -->
 
         <button
             type="button"
@@ -97,20 +156,26 @@
             id="inicio"
             aria-labelledby="hero-title">
 
-            <div class="hero-background"
+            <div
+                class="hero-background"
                 aria-hidden="true">
             </div>
 
             <div class="hero-content">
 
                 <div class="hero-tag">
+
                     <span aria-hidden="true"></span>
+
                     PIZZA ARTESANAL • DELIVERY
+
                 </div>
 
                 <h1 id="hero-title">
+
                     O verdadeiro sabor de uma
                     <em>pizza artesanal.</em>
+
                 </h1>
 
                 <p>
@@ -122,7 +187,8 @@
 
                 <div class="hero-buttons">
 
-                    <a href="#cardapio"
+                    <a
+                        href="#cardapio"
                         class="button button-primary">
 
                         Ver cardápio
@@ -130,7 +196,8 @@
 
                     </a>
 
-                    <a href="#historia"
+                    <a
+                        href="#historia"
                         class="button button-outline">
 
                         Conheça nossa história
@@ -142,7 +209,9 @@
                 <div class="hero-footer">
 
                     <span>INGREDIENTES SELECIONADOS</span>
+
                     <span>PREPARO ARTESANAL</span>
+
                     <span>DELIVERY DEMONSTRATIVO</span>
 
                 </div>
@@ -171,7 +240,9 @@
         </section>
 
 
-        <!-- DIFERENCIAIS -->
+        <!-- =====================================
+             DIFERENCIAIS
+        ====================================== -->
 
         <section
             class="features"
@@ -260,7 +331,13 @@
             </div>
 
 
-            <!-- LISTA DE PRODUTOS -->
+            <!-- =================================
+                 LISTA DE PRODUTOS
+
+                 Os produtos abaixo são utilizados
+                 como alternativa caso o catálogo
+                 dinâmico não consiga carregar.
+            ================================== -->
 
             <div class="pizza-grid" id="product-grid">
 
@@ -420,58 +497,72 @@
             </div>
 
 
-            <!-- =====================================
-                 CARRINHO DE PEDIDOS
-            ====================================== -->
+            <!-- =================================
+                 CARRINHO ATUAL
+
+                 Mantido temporariamente nesta
+                 posição para preservar o JavaScript.
+            ================================== -->
 
             <p class="order-intro" id="pedido">
+
                 Monte seu pedido utilizando o cardápio acima.
+
             </p>
 
-            <div
-                class="order-summary"
-                id="order-summary"
-                aria-labelledby="order-title"
-                hidden>
-
-                <h3 id="order-title">Seu pedido</h3>
-
-                <span
-                    id="order-count"
-                    role="status"
-                    aria-live="polite">
-
-                    0 itens
-
-                </span>
+            <div id="cart-inline-host">
 
                 <div
-                    class="order-items"
-                    id="order-items">
+                    class="order-summary"
+                    id="order-summary"
+                    aria-labelledby="order-title"
+                    hidden>
+
+                    <h3 id="order-title">
+                        Seu pedido
+                    </h3>
+
+                    <span
+                        id="order-count"
+                        role="status"
+                        aria-live="polite">
+
+                        0 itens
+
+                    </span>
+
+                    <div
+                        class="order-items"
+                        id="order-items">
+                    </div>
+
+                    <strong id="order-total">
+
+                        Total: R$ 0,00
+
+                    </strong>
+
+                    <button
+                        type="button"
+                        id="finish-order"
+                        aria-describedby="checkout-notice"
+                        disabled>
+
+                        Finalizar pedido ↗
+
+                    </button>
+
+                    <p
+                        class="checkout-notice"
+                        id="checkout-notice">
+
+                        Ambiente demonstrativo.
+                        Nenhum pedido ou pagamento real
+                        será realizado.
+
+                    </p>
+
                 </div>
-
-                <strong id="order-total">
-                    Total: R$ 0,00
-                </strong>
-
-                <button
-                    type="button"
-                    id="finish-order"
-                    aria-describedby="checkout-notice"
-                    disabled>
-
-                    Finalizar pedido ↗
-
-                </button>
-
-                <p
-                    class="checkout-notice"
-                    id="checkout-notice">
-
-                    Ambiente demonstrativo.
-                    Finalização de pedidos em desenvolvimento.
-
-                </p>
 
             </div>
 
@@ -504,7 +595,9 @@
                 </span>
 
                 <h2 id="story-title">
+
                     O segredo está nos <em>detalhes.</em>
+
                 </h2>
 
                 <p>
@@ -544,7 +637,9 @@
             </span>
 
             <h2 id="how-title">
+
                 Seu pedido em <em>três etapas.</em>
+
             </h2>
 
             <ol class="steps-grid">
@@ -600,18 +695,20 @@
                     <h3>Simule a finalização</h3>
 
                     <p>
-                        Etapa demonstrativa que será
-                        disponibilizada futuramente.
+                        Confira o valor total e simule
+                        a conclusão do seu pedido.
                     </p>
 
                 </li>
 
             </ol>
 
-            <a href="#cardapio"
+            <a
+                href="#cardapio"
                 class="button button-primary">
 
                 Explorar cardápio
+
                 <span aria-hidden="true">↗</span>
 
             </a>
@@ -653,11 +750,176 @@
         </div>
 
         <a href="#inicio">
+
             Voltar ao topo
+
             <span aria-hidden="true">↑</span>
+
         </a>
 
     </footer>
+
+
+    <!-- =====================================
+         NOVO CARRINHO LATERAL
+    ====================================== -->
+
+    <dialog
+        class="cart-dialog"
+        id="cart-dialog"
+        aria-labelledby="cart-dialog-title">
+
+        <div class="cart-panel">
+
+
+            <!-- CABEÇALHO DO CARRINHO -->
+
+            <header class="cart-header">
+
+                <div class="cart-heading">
+
+                    <span class="cart-eyebrow">
+
+                        FORNO &amp; MASSA
+
+                    </span>
+
+                    <h2 id="cart-dialog-title">
+
+                        Meu carrinho
+
+                    </h2>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="cart-close"
+                    id="cart-close"
+                    aria-label="Fechar carrinho">
+
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        aria-hidden="true"
+                        focusable="false">
+
+                        <path d="M18 6 6 18"/>
+
+                        <path d="m6 6 12 12"/>
+
+                    </svg>
+
+                </button>
+
+            </header>
+
+
+            <!-- CONTEÚDO DO CARRINHO -->
+
+            <div class="cart-content" id="cart-content">
+
+
+                <!-- ESTADO VAZIO -->
+
+                <div
+                    class="cart-empty"
+                    id="cart-empty"
+                    hidden>
+
+                    <div class="cart-empty-icon">
+
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="56"
+                            height="56"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.4"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            aria-hidden="true"
+                            focusable="false">
+
+                            <path d="M3 3h2l2.4 12h12.2l2.4-8H6"/>
+
+                            <circle cx="9" cy="20" r="1"/>
+
+                            <circle cx="19" cy="20" r="1"/>
+
+                        </svg>
+
+                    </div>
+
+                    <h3>Seu carrinho está vazio.</h3>
+
+                    <p>
+
+                        Explore nosso cardápio e adicione
+                        seus produtos favoritos ao pedido.
+
+                    </p>
+
+                    <button
+                        type="button"
+                        class="button button-primary"
+                        id="cart-empty-continue">
+
+                        Explorar cardápio
+
+                    </button>
+
+                </div>
+
+
+                <!-- RESUMO DO PEDIDO -->
+
+                <div
+                    class="cart-order-host"
+                    id="cart-order-host">
+
+                    <!--
+                        O JavaScript moverá o resumo
+                        existente para este local.
+                    -->
+
+                </div>
+
+            </div>
+
+
+            <!-- RODAPÉ DO CARRINHO -->
+
+            <footer class="cart-footer">
+
+                <button
+                    type="button"
+                    class="button button-outline"
+                    id="cart-continue">
+
+                    Continuar comprando
+
+                </button>
+
+                <p class="cart-demo-notice">
+
+                    Projeto demonstrativo DevWeb.
+                    Nenhuma compra real será realizada.
+
+                </p>
+
+            </footer>
+
+        </div>
+
+    </dialog>
 
 
     <!-- JAVASCRIPT -->
