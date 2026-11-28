@@ -6,6 +6,13 @@
 
 
 /* =========================================
+   CONFIGURAÇÕES DE IMAGENS
+========================================= */
+
+const PASTA_IMAGENS = "assets/images";
+
+
+/* =========================================
    CATEGORIAS
 ========================================= */
 
@@ -169,6 +176,21 @@ export const ADICIONAIS = [
 
 
 /* =========================================
+   CAMINHOS DAS IMAGENS
+========================================= */
+
+function obterImagemPizza(id, categoria) {
+
+    return `${PASTA_IMAGENS}/pizzas/${categoria}/${id}.webp`;
+}
+
+function obterImagemBebida(id) {
+
+    return `${PASTA_IMAGENS}/bebidas/${id}.webp`;
+}
+
+
+/* =========================================
    FUNÇÕES DE CONSTRUÇÃO DOS PRODUTOS
 ========================================= */
 
@@ -178,8 +200,9 @@ function criarPizza(
     categoria,
     descricao,
     precos,
-    imagem = null
+    imagem = obterImagemPizza(id, categoria)
 ) {
+
     return {
         id,
         nome,
@@ -200,8 +223,9 @@ function criarBebida(
     descricao,
     volume,
     precoCentavos,
-    imagem = null
+    imagem = obterImagemBebida(id)
 ) {
+
     return {
         id,
         nome,
@@ -239,8 +263,7 @@ export const PRODUTOS = [
             M: 4200,
             G: 5200,
             GG: 6500
-        },
-        "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=900&q=80"
+        }
     ),
 
     criarPizza(
@@ -253,8 +276,7 @@ export const PRODUTOS = [
             M: 4900,
             G: 5900,
             GG: 7200
-        },
-        "https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?auto=format&fit=crop&w=900&q=80"
+        }
     ),
 
     criarPizza(
@@ -324,8 +346,7 @@ export const PRODUTOS = [
             M: 5400,
             G: 6400,
             GG: 7900
-        },
-        "https://images.unsplash.com/photo-1579751626657-72bc17010498?auto=format&fit=crop&w=900&q=80"
+        }
     ),
 
     criarPizza(
@@ -510,24 +531,28 @@ export const PRODUTOS = [
 ========================================= */
 
 export function buscarProduto(id) {
+
     return PRODUTOS.find(
         produto => produto.id === id
     ) || null;
 }
 
 export function listarProdutosDisponiveis() {
+
     return PRODUTOS.filter(
         produto => produto.disponivel
     );
 }
 
 export function listarProdutosPorCategoria(categoria) {
+
     return listarProdutosDisponiveis().filter(
         produto => produto.categoria === categoria
     );
 }
 
 export function listarBordasPermitidas(produtoId) {
+
     const produto = buscarProduto(produtoId);
 
     if (!produto || !produto.personalizavel) {
@@ -540,6 +565,7 @@ export function listarBordasPermitidas(produtoId) {
 }
 
 export function listarAdicionaisPermitidos(produtoId) {
+
     const produto = buscarProduto(produtoId);
 
     if (!produto || !produto.personalizavel) {
