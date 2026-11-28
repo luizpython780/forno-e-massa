@@ -1,0 +1,187 @@
+/* =========================================
+   CABEÇALHO
+========================================= */
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    min-height: var(--header-height);
+    padding: 0 var(--page-padding);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+
+    background: rgba(247, 242, 235, 0.96);
+    border-bottom: 1px solid var(--line);
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+
+.logo {
+    display: inline-flex;
+    align-items: center;
+
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+    white-space: nowrap;
+}
+
+.logo span {
+    color: var(--orange);
+    margin: 0 4px;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: clamp(16px, 2.4vw, 36px);
+}
+
+.nav a {
+    position: relative;
+    padding: 12px 0;
+
+    color: var(--text);
+    font-size: 14px;
+    font-weight: 500;
+    white-space: nowrap;
+
+    transition: color var(--transition);
+}
+
+.nav a::after {
+    content: '';
+    position: absolute;
+
+    bottom: 5px;
+    left: 0;
+
+    width: 0;
+    height: 2px;
+
+    background: var(--orange);
+    transition: width var(--transition);
+}
+
+.nav a:hover,
+.nav a:focus-visible {
+    color: var(--orange);
+}
+
+.nav a:hover::after {
+    width: 100%;
+}
+
+.header-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    min-height: 46px;
+    padding: 10px 20px;
+
+    background: var(--orange);
+    color: var(--white);
+    border-radius: var(--radius-sm);
+
+    font-size: 13px;
+    font-weight: 700;
+    white-space: nowrap;
+
+    transition: background var(--transition),
+                transform var(--transition);
+}
+
+.header-button:hover {
+    background: var(--orange-hover);
+    transform: translateY(-2px);
+}
+
+.menu-toggle {
+    display: none;
+
+    width: 46px;
+    height: 46px;
+
+    background: var(--surface);
+    color: var(--dark);
+
+    border: 1px solid var(--line);
+    border-radius: var(--radius-sm);
+
+    font-size: 25px;
+}
+
+/* =========================================
+   BOTÃO DO CARRINHO NO CABEÇALHO
+========================================= */
+
+.cart-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    gap: 9px;
+
+    min-height: 46px;
+    padding: 10px 14px;
+
+    background: var(--surface);
+    color: var(--dark);
+
+    border: 1px solid var(--line);
+    border-radius: var(--radius-sm);
+
+    font-size: 13px;
+    font-weight: 700;
+    white-space: nowrap;
+
+    transition: background var(--transition),
+                color var(--transition),
+                border-color var(--transition);
+}
+
+.cart-toggle:hover {
+    background: var(--surface-alt);
+    color: var(--orange);
+    border-color: var(--orange);
+}
+
+.cart-icon {
+    flex-shrink: 0;
+    width: 23px;
+    height: 23px;
+    color: var(--orange);
+}
+
+.cart-toggle-label {
+    font-size: 13px;
+}
+
+.cart-badge {
+    display: inline-grid;
+    place-items: center;
+
+    min-width: 24px;
+    min-height: 24px;
+    padding: 2px 6px;
+
+    background: var(--orange);
+    color: var(--white);
+
+    border-radius: 999px;
+
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1.2;
+
+    font-variant-numeric: tabular-nums;
+}
+

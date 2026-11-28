@@ -1,0 +1,52 @@
+/* =========================================
+   RODAPÉ DO SITE
+========================================= */
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+
+    padding: 40px var(--page-padding);
+
+    background: var(--dark);
+    color: var(--white);
+}
+
+.footer .logo span {
+    color: #efb29b;
+}
+
+.footer-information {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.footer p {
+    color: #d8c9bf;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.footer > a:last-child {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    min-height: 44px;
+
+    color: #efb29b;
+
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
+
+    transition: color var(--transition);
+}
+
+.footer > a:last-child:hover {
+    color: var(--white);
+}
+

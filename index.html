@@ -334,9 +334,8 @@
             <!-- =================================
                  LISTA DE PRODUTOS
 
-                 Os produtos abaixo são utilizados
-                 como alternativa caso o catálogo
-                 dinâmico não consiga carregar.
+                 Produtos de contingência caso
+                 o catálogo dinâmico não carregue.
             ================================== -->
 
             <div class="pizza-grid" id="product-grid">
@@ -498,10 +497,10 @@
 
 
             <!-- =================================
-                 CARRINHO ATUAL
+                 RESUMO DO PEDIDO
 
-                 Mantido temporariamente nesta
-                 posição para preservar o JavaScript.
+                 O JavaScript moverá o resumo
+                 para dentro do carrinho lateral.
             ================================== -->
 
             <p class="order-intro" id="pedido">
@@ -761,7 +760,477 @@
 
 
     <!-- =====================================
-         NOVO CARRINHO LATERAL
+         JANELA DE PERSONALIZAÇÃO DAS PIZZAS
+    ====================================== -->
+
+    <dialog
+        class="customization-dialog"
+        id="customization-dialog"
+        aria-labelledby="customization-title">
+
+        <form
+            class="customization-panel"
+            id="customization-form"
+            method="dialog">
+
+
+            <!-- =================================
+                 CABEÇALHO DA PERSONALIZAÇÃO
+            ================================== -->
+
+            <header class="customization-header">
+
+                <div class="customization-heading">
+
+                    <span class="customization-eyebrow">
+
+                        MONTE SUA PIZZA
+
+                    </span>
+
+                    <h2 id="customization-title">
+
+                        Personalize seu pedido
+
+                    </h2>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="customization-close"
+                    id="customization-close"
+                    aria-label="Fechar personalização"
+                    autofocus>
+
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        aria-hidden="true"
+                        focusable="false">
+
+                        <path d="M18 6 6 18"/>
+
+                        <path d="m6 6 12 12"/>
+
+                    </svg>
+
+                </button>
+
+            </header>
+
+
+            <!-- =================================
+                 CONTEÚDO DA PERSONALIZAÇÃO
+            ================================== -->
+
+            <div
+                class="customization-content"
+                id="customization-content">
+
+
+                <!-- INFORMAÇÕES DO PRODUTO -->
+
+                <section
+                    class="customization-product"
+                    aria-labelledby="customization-product-name">
+
+                    <div
+                        class="customization-product-image"
+                        id="customization-image-host">
+
+                        <!--
+                            O JavaScript inserirá a fotografia
+                            WebP do produto selecionado.
+                        -->
+
+                    </div>
+
+                    <div class="customization-product-info">
+
+                        <span
+                            class="customization-category"
+                            id="customization-category">
+                        </span>
+
+                        <h3 id="customization-product-name">
+
+                            Pizza selecionada
+
+                        </h3>
+
+                        <p id="customization-description">
+                        </p>
+
+                        <span class="customization-image-notice">
+
+                            Imagem ilustrativa
+
+                        </span>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =================================
+                     SELEÇÃO DE TAMANHO
+                ================================== -->
+
+                <fieldset
+                    class="customization-section"
+                    id="customization-size-section">
+
+                    <legend class="customization-section-title">
+
+                        Escolha o tamanho
+
+                        <span class="customization-required">
+
+                            Obrigatório
+
+                        </span>
+
+                    </legend>
+
+                    <p
+                        class="customization-section-description"
+                        id="customization-size-help">
+
+                        Selecione o tamanho da sua pizza.
+
+                    </p>
+
+                    <div
+                        class="customization-size-options"
+                        id="customization-size-options"
+                        aria-describedby="customization-size-help">
+
+                        <!--
+                            Opções P, M, G e GG serão
+                            geradas a partir do catálogo.
+                        -->
+
+                    </div>
+
+                </fieldset>
+
+
+                <!-- =================================
+                     SELEÇÃO DE BORDA
+                ================================== -->
+
+                <fieldset
+                    class="customization-section"
+                    id="customization-border-section">
+
+                    <legend class="customization-section-title">
+
+                        Escolha a borda
+
+                    </legend>
+
+                    <p
+                        class="customization-section-description"
+                        id="customization-border-help">
+
+                        Selecione a borda tradicional ou
+                        uma das opções recheadas.
+
+                    </p>
+
+                    <div
+                        class="customization-options"
+                        id="customization-border-options"
+                        aria-describedby="customization-border-help">
+
+                        <!--
+                            As bordas serão geradas conforme
+                            o grupo da pizza: salgada ou doce.
+                        -->
+
+                    </div>
+
+                </fieldset>
+
+
+                <!-- =================================
+                     INGREDIENTES ADICIONAIS
+                ================================== -->
+
+                <fieldset
+                    class="customization-section"
+                    id="customization-extras-section">
+
+                    <legend class="customization-section-title">
+
+                        Ingredientes adicionais
+
+                        <span class="customization-optional">
+
+                            Opcional
+
+                        </span>
+
+                    </legend>
+
+                    <p
+                        class="customization-section-description"
+                        id="customization-extras-help">
+
+                        Acrescente seus ingredientes favoritos.
+
+                    </p>
+
+                    <div
+                        class="customization-options"
+                        id="customization-extra-options"
+                        aria-describedby="customization-extras-help">
+
+                        <!--
+                            Os adicionais permitidos serão
+                            carregados diretamente do catálogo.
+                        -->
+
+                    </div>
+
+                </fieldset>
+
+
+                <!-- =================================
+                     OBSERVAÇÕES PERSONALIZADAS
+                ================================== -->
+
+                <section class="customization-section">
+
+                    <label
+                        class="customization-section-title"
+                        for="customization-notes">
+
+                        Observações
+
+                        <span class="customization-optional">
+
+                            Opcional
+
+                        </span>
+
+                    </label>
+
+                    <p
+                        class="customization-section-description"
+                        id="customization-notes-help">
+
+                        Informe suas preferências de preparo,
+                        sem incluir dados pessoais.
+
+                    </p>
+
+                    <textarea
+                        class="customization-notes"
+                        id="customization-notes"
+                        name="observacoes"
+                        rows="3"
+                        maxlength="250"
+                        placeholder="Ex.: sem cebola, bem assada..."
+                        aria-describedby="customization-notes-help customization-notes-count"></textarea>
+
+                    <div class="customization-notes-footer">
+
+                        <span
+                            class="customization-notes-count"
+                            id="customization-notes-count">
+
+                            0/250 caracteres
+
+                        </span>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =================================
+                     CONTROLE DE QUANTIDADE
+                ================================== -->
+
+                <section
+                    class="customization-section customization-quantity-section"
+                    aria-labelledby="customization-quantity-title">
+
+                    <div class="customization-quantity-info">
+
+                        <h3
+                            class="customization-section-title"
+                            id="customization-quantity-title">
+
+                            Quantidade
+
+                        </h3>
+
+                        <p class="customization-section-description">
+
+                            Quantas pizzas com essa configuração?
+
+                        </p>
+
+                    </div>
+
+                    <div
+                        class="customization-quantity-controls"
+                        role="group"
+                        aria-label="Quantidade de pizzas">
+
+                        <button
+                            type="button"
+                            class="customization-quantity-button"
+                            id="customization-decrease"
+                            aria-label="Diminuir quantidade"
+                            disabled>
+
+                            −
+
+                        </button>
+
+                        <output
+                            class="customization-quantity-value"
+                            id="customization-quantity"
+                            aria-label="Quantidade selecionada">
+
+                            1
+
+                        </output>
+
+                        <button
+                            type="button"
+                            class="customization-quantity-button"
+                            id="customization-increase"
+                            aria-label="Aumentar quantidade"
+                            disabled>
+
+                            +
+
+                        </button>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =================================
+                     MENSAGENS DE VALIDAÇÃO
+                ================================== -->
+
+                <p
+                    class="customization-error"
+                    id="customization-error"
+                    role="alert"
+                    hidden>
+                </p>
+
+            </div>
+
+
+            <!-- =================================
+                 RODAPÉ DA PERSONALIZAÇÃO
+            ================================== -->
+
+            <footer class="customization-footer">
+
+                <div class="customization-price-summary">
+
+                    <div class="customization-unit-price">
+
+                        <span>Valor unitário</span>
+
+                        <strong id="customization-unit-price">
+
+                            R$ 0,00
+
+                        </strong>
+
+                    </div>
+
+                    <div
+                        class="customization-total-price"
+                        role="status"
+                        aria-live="polite"
+                        aria-atomic="true">
+
+                        <span>Total</span>
+
+                        <strong id="customization-total">
+
+                            R$ 0,00
+
+                        </strong>
+
+                    </div>
+
+                </div>
+
+                <button
+                    type="submit"
+                    class="button button-primary customization-add"
+                    id="customization-add"
+                    disabled>
+
+                    <span>Adicionar ao pedido</span>
+
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="22"
+                        height="22"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                        focusable="false">
+
+                        <path d="M3 3h2l2.4 12h12.2l2.4-8H6"/>
+
+                        <circle cx="9" cy="20" r="1"/>
+
+                        <circle cx="19" cy="20" r="1"/>
+
+                    </svg>
+
+                </button>
+
+                <button
+                    type="button"
+                    class="button button-outline customization-cancel"
+                    id="customization-cancel">
+
+                    Voltar ao cardápio
+
+                </button>
+
+                <p class="customization-demo-notice">
+
+                    Ambiente demonstrativo.
+                    Nenhum pedido real será realizado.
+
+                </p>
+
+            </footer>
+
+        </form>
+
+    </dialog>
+
+
+    <!-- =====================================
+         CARRINHO LATERAL
     ====================================== -->
 
     <dialog
