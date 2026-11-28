@@ -1,0 +1,1095 @@
+
+/* =========================================
+   FORNO & MASSA
+   DEVWEB - PERSONALIZAÇÃO DE PIZZAS
+========================================= */
+
+
+/* =========================================
+   ANIMAÇÃO DE ABERTURA
+========================================= */
+
+@keyframes customizationEnter {
+
+    from {
+        opacity: 0;
+        transform: translateY(16px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+}
+
+
+/* =========================================
+   JANELA PRINCIPAL
+========================================= */
+
+.customization-dialog {
+    position: fixed;
+    inset: 0;
+
+    width: min(680px, calc(100% - 40px));
+    max-width: none;
+
+    height: min(820px, calc(100vh - 48px));
+    height: min(820px, calc(100dvh - 48px));
+    max-height: none;
+
+    margin: auto;
+    padding: 0;
+
+    background: var(--surface);
+    color: var(--dark);
+
+    border: none;
+    border-radius: var(--radius-lg);
+
+    box-shadow: 0 24px 90px rgba(47, 36, 31, 0.25);
+
+    overflow: hidden;
+}
+
+.customization-dialog:not([open]) {
+    display: none;
+}
+
+.customization-dialog[open] {
+    display: block;
+
+    animation: customizationEnter 0.25s ease both;
+}
+
+.customization-dialog::backdrop {
+    background: rgba(32, 24, 20, 0.60);
+
+    animation: backdropFadeIn 0.25s ease both;
+}
+
+
+/* BLOQUEAR ROLAGEM DO FUNDO */
+
+html:has(.customization-dialog[open]),
+body:has(.customization-dialog[open]) {
+    overflow: hidden;
+    overscroll-behavior: none;
+}
+
+
+/* =========================================
+   ESTRUTURA INTERNA
+========================================= */
+
+.customization-panel {
+    display: grid;
+
+    grid-template-rows: auto minmax(0, 1fr) auto;
+
+    width: 100%;
+    height: 100%;
+
+    min-width: 0;
+    min-height: 0;
+}
+
+
+/* =========================================
+   CABEÇALHO
+========================================= */
+
+.customization-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+
+    padding: 22px 28px;
+
+    background: var(--surface);
+
+    border-bottom: 1px solid var(--line);
+}
+
+.customization-heading {
+    min-width: 0;
+}
+
+.customization-eyebrow {
+    display: block;
+
+    margin-bottom: 3px;
+
+    color: var(--orange);
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.6px;
+}
+
+.customization-heading h2 {
+    font-family: var(--serif);
+    font-size: clamp(22px, 4vw, 30px);
+    font-weight: 500;
+    line-height: 1.3;
+}
+
+
+/* BOTÃO FECHAR */
+
+.customization-close {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    width: 44px;
+    height: 44px;
+
+    background: var(--surface-alt);
+    color: var(--dark);
+
+    border: 1px solid transparent;
+    border-radius: 50%;
+
+    transition:
+        background var(--transition),
+        color var(--transition),
+        border-color var(--transition);
+}
+
+.customization-close:hover {
+    background: var(--orange);
+    color: var(--white);
+}
+
+
+/* =========================================
+   CONTEÚDO COM ROLAGEM INDEPENDENTE
+========================================= */
+
+.customization-content {
+    min-height: 0;
+    min-width: 0;
+
+    padding: 24px 28px;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    overscroll-behavior: contain;
+
+    scrollbar-width: thin;
+    scrollbar-color: var(--orange) var(--surface-alt);
+}
+
+.customization-content::-webkit-scrollbar {
+    width: 7px;
+}
+
+.customization-content::-webkit-scrollbar-track {
+    background: var(--surface-alt);
+}
+
+.customization-content::-webkit-scrollbar-thumb {
+    background: var(--orange);
+    border-radius: 20px;
+}
+
+
+/* =========================================
+   PRODUTO SELECIONADO
+========================================= */
+
+.customization-product {
+    display: grid;
+
+    grid-template-columns: 132px minmax(0, 1fr);
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding-bottom: 24px;
+}
+
+.customization-product-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    aspect-ratio: 1 / 1;
+
+    background: var(--surface-alt);
+    color: var(--text);
+
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+
+    overflow: hidden;
+
+    font-size: 12px;
+    text-align: center;
+}
+
+.customization-product-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.customization-product-info {
+    min-width: 0;
+
+    overflow-wrap: anywhere;
+}
+
+.customization-category {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: var(--orange);
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+}
+
+.customization-product-info h3 {
+    margin-bottom: 7px;
+
+    font-family: var(--serif);
+    font-size: clamp(22px, 4vw, 29px);
+    font-weight: 500;
+    line-height: 1.3;
+}
+
+.customization-product-info p {
+    color: var(--text);
+
+    font-size: 14px;
+    line-height: 1.65;
+}
+
+.customization-image-notice {
+    display: block;
+
+    margin-top: 8px;
+
+    color: var(--text);
+
+    font-size: 11px;
+}
+
+
+/* =========================================
+   SEÇÕES DE PERSONALIZAÇÃO
+========================================= */
+
+.customization-section {
+    display: block;
+
+    min-width: 0;
+
+    margin: 0 0 24px;
+    padding: 0 0 24px;
+
+    border: 0;
+    border-bottom: 1px solid var(--line);
+}
+
+.customization-section-title {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    width: 100%;
+
+    margin-bottom: 5px;
+
+    color: var(--dark);
+
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.customization-section-description {
+    margin-bottom: 15px;
+
+    color: var(--text);
+
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+
+/* IDENTIFICAÇÃO DAS OPÇÕES */
+
+.customization-required,
+.customization-optional {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 3px 9px;
+
+    border-radius: 20px;
+
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.customization-required {
+    background: rgba(164, 63, 40, 0.10);
+    color: var(--orange);
+}
+
+.customization-optional {
+    background: var(--surface-alt);
+    color: var(--text);
+}
+
+
+/* =========================================
+   SELEÇÃO DE TAMANHOS
+========================================= */
+
+.customization-size-options {
+    display: grid;
+
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: 10px;
+}
+
+.customization-size-option {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 4px;
+
+    min-width: 0;
+    min-height: 125px;
+
+    padding: 12px 6px;
+
+    background: var(--surface-alt);
+    color: var(--dark);
+
+    border: 2px solid transparent;
+    border-radius: var(--radius-md);
+
+    text-align: center;
+
+    cursor: pointer;
+
+    transition:
+        background var(--transition),
+        border-color var(--transition),
+        color var(--transition),
+        box-shadow var(--transition);
+}
+
+
+/* RÁDIO ACESSÍVEL SEM ALTERAR O DESIGN */
+
+.customization-size-option input {
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+
+    padding: 0;
+
+    overflow: hidden;
+
+    clip-path: inset(50%);
+
+    white-space: nowrap;
+}
+
+.customization-size-option:hover {
+    border-color: var(--orange);
+}
+
+.customization-size-option:has(input:checked) {
+    background: var(--orange);
+    color: var(--white);
+
+    border-color: var(--orange);
+
+    box-shadow: 0 5px 15px rgba(164, 63, 40, 0.18);
+}
+
+.customization-size-option:has(input:focus-visible) {
+    outline: 3px solid var(--orange);
+    outline-offset: 3px;
+}
+
+.customization-size-option:has(input:disabled) {
+    opacity: 0.5;
+
+    cursor: not-allowed;
+}
+
+.customization-size-code {
+    font-family: var(--serif);
+
+    font-size: 27px;
+    font-weight: 700;
+    line-height: 1.15;
+}
+
+.customization-size-name {
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.customization-size-details {
+    color: var(--text);
+
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.customization-size-price {
+    margin-top: 5px;
+
+    font-size: 13px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.customization-size-option:has(input:checked)
+.customization-size-details {
+    color: var(--white);
+}
+
+
+/* =========================================
+   BORDAS E INGREDIENTES ADICIONAIS
+========================================= */
+
+.customization-options {
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+.customization-option {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    min-height: 52px;
+
+    padding: 12px 14px;
+
+    background: var(--white);
+
+    border: 1px solid var(--line);
+    border-radius: var(--radius-sm);
+
+    cursor: pointer;
+
+    transition:
+        background var(--transition),
+        border-color var(--transition);
+}
+
+.customization-option:hover {
+    border-color: var(--orange);
+}
+
+.customization-option:has(input:checked) {
+    background: rgba(164, 63, 40, 0.05);
+
+    border-color: var(--orange);
+}
+
+.customization-option:has(input:focus-visible) {
+    outline: 3px solid var(--orange);
+    outline-offset: 3px;
+}
+
+.customization-option:has(input:disabled) {
+    opacity: 0.5;
+
+    cursor: not-allowed;
+}
+
+.customization-option input {
+    flex-shrink: 0;
+
+    width: 18px;
+    height: 18px;
+
+    accent-color: var(--orange);
+
+    cursor: inherit;
+}
+
+.customization-option-info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+
+    min-width: 0;
+
+    overflow-wrap: anywhere;
+}
+
+.customization-option-name {
+    color: var(--dark);
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.customization-option-description {
+    color: var(--text);
+
+    font-size: 12px;
+}
+
+.customization-option-price {
+    flex-shrink: 0;
+
+    color: var(--orange);
+
+    font-size: 13px;
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+.customization-option-price.is-free {
+    color: var(--green);
+}
+
+
+/* =========================================
+   OBSERVAÇÕES
+========================================= */
+
+.customization-notes {
+    display: block;
+
+    width: 100%;
+    min-height: 95px;
+    max-height: 220px;
+
+    padding: 14px;
+
+    background: var(--white);
+    color: var(--dark);
+
+    border: 1px solid var(--line);
+    border-radius: var(--radius-sm);
+
+    font-size: 14px;
+    line-height: 1.6;
+
+    resize: vertical;
+
+    transition:
+        border-color var(--transition);
+}
+
+.customization-notes::placeholder {
+    color: var(--text);
+
+    opacity: 0.75;
+}
+
+.customization-notes:focus {
+    border-color: var(--orange);
+}
+
+.customization-notes-footer {
+    display: flex;
+    justify-content: flex-end;
+
+    margin-top: 6px;
+}
+
+.customization-notes-count {
+    color: var(--text);
+
+    font-size: 11px;
+}
+
+
+/* =========================================
+   QUANTIDADE
+========================================= */
+
+.customization-quantity-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    gap: 16px;
+
+    margin-bottom: 0;
+    padding-bottom: 0;
+
+    border-bottom: none;
+}
+
+.customization-quantity-info {
+    flex: 1;
+
+    min-width: 160px;
+}
+
+.customization-quantity-info
+.customization-section-description {
+    margin-bottom: 0;
+}
+
+.customization-quantity-controls {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 5px;
+
+    background: var(--surface-alt);
+
+    border-radius: var(--radius-sm);
+}
+
+.customization-quantity-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 44px;
+    height: 44px;
+
+    background: var(--white);
+    color: var(--dark);
+
+    border: 1px solid var(--line);
+    border-radius: var(--radius-sm);
+
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 1;
+
+    transition:
+        background var(--transition),
+        color var(--transition),
+        border-color var(--transition);
+}
+
+.customization-quantity-button:hover:not(:disabled) {
+    background: var(--orange);
+    color: var(--white);
+
+    border-color: var(--orange);
+}
+
+.customization-quantity-button:disabled {
+    opacity: 0.4;
+
+    cursor: not-allowed;
+}
+
+.customization-quantity-value {
+    min-width: 25px;
+
+    color: var(--dark);
+
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+
+    font-variant-numeric: tabular-nums;
+}
+
+
+/* =========================================
+   VALIDAÇÃO
+========================================= */
+
+.customization-error {
+    margin-top: 20px;
+    padding: 12px 15px;
+
+    background: rgba(164, 63, 40, 0.08);
+    color: var(--orange);
+
+    border: 1px solid rgba(164, 63, 40, 0.3);
+    border-radius: var(--radius-sm);
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+/* =========================================
+   RODAPÉ FIXO DENTRO DA JANELA
+========================================= */
+
+.customization-footer {
+    display: grid;
+
+    gap: 10px;
+
+    padding: 18px 28px;
+
+    background: var(--surface);
+
+    border-top: 1px solid var(--line);
+
+    box-shadow: 0 -8px 25px rgba(47, 36, 31, 0.04);
+}
+
+.customization-price-summary {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    margin-bottom: 3px;
+}
+
+.customization-unit-price,
+.customization-total-price {
+    display: flex;
+    flex-direction: column;
+
+    gap: 2px;
+}
+
+.customization-unit-price > span,
+.customization-total-price > span {
+    color: var(--text);
+
+    font-size: 12px;
+}
+
+.customization-unit-price strong {
+    color: var(--dark);
+
+    font-size: 15px;
+    font-weight: 600;
+
+    font-variant-numeric: tabular-nums;
+}
+
+.customization-total-price {
+    text-align: right;
+}
+
+.customization-total-price strong {
+    color: var(--orange);
+
+    font-size: clamp(22px, 5vw, 30px);
+    font-weight: 700;
+    line-height: 1.2;
+
+    font-variant-numeric: tabular-nums;
+}
+
+
+/* BOTÃO ADICIONAR */
+
+.customization-add {
+    justify-content: space-between;
+
+    width: 100%;
+    min-height: 52px;
+
+    font-size: 15px;
+}
+
+.customization-add:disabled,
+.customization-add:disabled:hover {
+    background: var(--surface-alt);
+    color: var(--text);
+
+    border-color: var(--line);
+
+    opacity: 0.7;
+
+    transform: none;
+
+    cursor: not-allowed;
+}
+
+
+/* BOTÃO VOLTAR */
+
+.customization-cancel {
+    width: 100%;
+    min-height: 44px;
+
+    padding: 8px 16px;
+
+    font-size: 13px;
+}
+
+.customization-demo-notice {
+    color: var(--text);
+
+    font-size: 10px;
+    line-height: 1.5;
+    text-align: center;
+}
+
+
+/* =========================================
+   RESPONSIVIDADE - CELULARES
+========================================= */
+
+@media (max-width: 650px) {
+
+    .customization-dialog {
+        width: 100%;
+
+        height: 100vh;
+        height: 100dvh;
+
+        border-radius: 0;
+    }
+
+    .customization-header {
+        padding: 16px 20px;
+    }
+
+    .customization-content {
+        padding: 20px;
+    }
+
+    .customization-product {
+        grid-template-columns: 105px minmax(0, 1fr);
+
+        gap: 15px;
+    }
+
+    .customization-product-info p {
+        font-size: 13px;
+    }
+
+    .customization-size-options {
+        gap: 7px;
+    }
+
+    .customization-size-option {
+        min-height: 115px;
+
+        padding: 10px 4px;
+
+        border-radius: var(--radius-sm);
+    }
+
+    .customization-size-code {
+        font-size: 24px;
+    }
+
+    .customization-size-name {
+        font-size: 11px;
+    }
+
+    .customization-size-details {
+        font-size: 10px;
+    }
+
+    .customization-size-price {
+        font-size: 12px;
+    }
+
+    .customization-footer {
+        padding: 14px 20px;
+
+        padding-bottom:
+            max(14px, env(safe-area-inset-bottom));
+    }
+
+    .customization-notes {
+        font-size: 16px;
+    }
+
+}
+
+
+/* =========================================
+   CELULARES COM TELAS ESTREITAS
+========================================= */
+
+@media (max-width: 380px) {
+
+    .customization-header {
+        padding: 12px 16px;
+    }
+
+    .customization-heading h2 {
+        font-size: 21px;
+    }
+
+    .customization-eyebrow {
+        font-size: 9px;
+    }
+
+    .customization-content {
+        padding: 16px;
+    }
+
+    .customization-product {
+        grid-template-columns: 85px minmax(0, 1fr);
+
+        gap: 12px;
+    }
+
+    .customization-product-info h3 {
+        font-size: 21px;
+    }
+
+    .customization-size-options {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .customization-size-option {
+        min-height: 105px;
+    }
+
+    .customization-option {
+        padding: 10px;
+
+        gap: 9px;
+    }
+
+    .customization-option-name {
+        font-size: 13px;
+    }
+
+    .customization-option-price {
+        font-size: 12px;
+    }
+
+    .customization-footer {
+        padding: 12px 16px;
+
+        padding-bottom:
+            max(12px, env(safe-area-inset-bottom));
+    }
+
+}
+
+
+/* =========================================
+   TELAS COM POUCA ALTURA
+========================================= */
+
+@media (max-height: 540px) {
+
+    .customization-dialog {
+        height: 100vh;
+        height: 100dvh;
+
+        border-radius: 0;
+    }
+
+    .customization-header {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .customization-heading h2 {
+        font-size: 21px;
+    }
+
+    .customization-content {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    .customization-footer {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 7px;
+
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .customization-price-summary,
+    .customization-demo-notice {
+        grid-column: 1 / -1;
+    }
+
+    .customization-add,
+    .customization-cancel {
+        min-height: 44px;
+
+        padding: 8px;
+
+        font-size: 12px;
+    }
+
+    .customization-total-price strong {
+        font-size: 22px;
+    }
+
+}
+
+@media (max-height: 320px) {
+
+    .customization-dialog {
+        overflow-y: auto;
+    }
+
+    .customization-panel {
+        height: auto;
+        min-height: 320px;
+    }
+
+    .customization-content {
+        max-height: 180px;
+    }
+
+}
+
+
+/* =========================================
+   ACESSIBILIDADE - REDUÇÃO DE MOVIMENTO
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .customization-dialog,
+    .customization-dialog::backdrop {
+        animation: none !important;
+    }
+
+    .customization-add:hover,
+    .customization-cancel:hover {
+        transform: none !important;
+    }
+
+}
+
+
+/* =========================================
+   FIM DO MÓDULO DE PERSONALIZAÇÃO
+========================================= */
